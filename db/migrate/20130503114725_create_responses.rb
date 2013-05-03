@@ -1,4 +1,4 @@
-class CreateUserResponses < ActiveRecord::Migration
+class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses, :id => false do |t|
       t.references :user
