@@ -1,3 +1,5 @@
-class User < ActiveRecord::Base
-  # Remember to create a migration!
+class User < ActiveRecord::
+  has_many :completions
+  has_many :surveys, :through => :completions, :class_name => 'Survey', :foreign_key => 'author_id'
+  has_many :responses
 end
