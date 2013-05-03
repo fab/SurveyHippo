@@ -1,6 +1,6 @@
 class CreateCompletions < ActiveRecord::Migration
   def change
-    create_table :completions, :id => false do |t|
+    create_table :completions do |t|
       t.references :survey
       t.references :user
       t.boolean    :completed, :default => false
