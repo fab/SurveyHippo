@@ -3,11 +3,8 @@ get '/survey/create' do
 end
 
 post '/survey/create' do
-  p params
-  # p params[:question]
-  # p params[:q1_choice]
 
-  survey = Survey.create(name: params[:name])
+  survey = Survey.create(name: params[:name], author_id:)
 
   q_num = 1
 
