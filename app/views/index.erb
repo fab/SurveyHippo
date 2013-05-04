@@ -1,23 +1,21 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <form action="/login" method="post">
+    Username: <input type="text" placeholder="username" required name="username"><br>
+    Password: <input type="password" placeholder="password" required name="password"><br>
+    <input type="submit" value="Login">
+  </form><br><br>
+  
+  <form action="/register" method="post">
+    Username: <input type="text" placeholder="username" required name="username" autocomplete="on"><br>
+    Email: <input type="email" placeholder="email" required name="email" autocomplete="on"><br>
+    Password: <input type="password" size=">5" placeholder="password" required name="password"><br>
+    <input type="submit" value="Register">
+  </form>
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  <% end %>
 </div>
