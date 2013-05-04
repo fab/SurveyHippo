@@ -12,9 +12,26 @@ end
 
 
 post '/login' do
+  current_user = User.authenticate(params[:username], params[:password])
+
+  if current_user
+    session[:id] = current_user.id
+    redirect("/user/#{current_user.id}")
+  else
+    @errors = current_user.errors.full_messages
+    erb :index
+  end
+
   erb :user_profile
 end
 
 get "/user/:id" do
   erb :user_profile
 end
+
+get '/logout' do
+  session.clear
+  @message = "You have successfully logged out!"
+  erb :index
+end
+
