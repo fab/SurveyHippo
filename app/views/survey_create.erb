@@ -1,0 +1,31 @@
+<div class='container'>
+  <h2>Create a survey!</h2>
+
+
+  <form method='POST' action='/survey/create'>
+    <p><input type='text' name='name' placeholder='Name your survey...'></p>
+    <div>
+      <p><input type='text' name='question[]' placeholder='Type in a question...'></p>
+      <p><input type='text' name='choice_q1[]' placeholder='Type in a choice...'></p>
+      <p><input type='text' name='choice_q1[]' placeholder='Type in a choice...'></p>
+      <p><input type='text' name='choice_q1[]' placeholder='Type in a choice...'></p>
+
+
+      <p><a href='#'>Add another choice</a></p>
+    </div>
+
+    <div>
+      <p><input type='text' name='question[]' placeholder='Type in a question...'></p>
+      <p><input type='text' name='choice_q2[]' placeholder='Type in a choice...'></p>
+      <p><input type='text' name='choice_q2[]' placeholder='Type in a choice...'></p>
+      <p><input type='text' name='choice_q2[]' placeholder='Type in a choice...'></p>
+
+
+      <p><a href='#'>Add another choice</a></p>
+    </div>
+
+    <p><a href='#'>Add another question</a></p>
+    <p><input type='submit' value='Submit'></p>
+  </form>
+  
+</div>
