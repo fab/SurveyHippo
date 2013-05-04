@@ -4,18 +4,19 @@
 
   <form method='POST' action='/survey/create'>
     <p><input type='text' name='name' placeholder='Name your survey...'></p>
-    <div class='question'>
+    <div class='create_q'>
       <p><input type='text' name='question[]' placeholder='Type in a question...'></p>
       <p><input type='text' name='choice_q1[]' placeholder='Type in a choice...'></p>
-      <p><a href='#'>Add another choice</a></p>
+      <p><a class='add_c' href='#'>Add another choice</a></p>
     </div>
-    <p><a href='#'>Add another question</a></p>
+    <p><a class='add_q' href='#'>Add another question</a></p>
     <p><input type='submit' value='Submit'></p>
   </form>
   
 </div>
 
-
+<!-- 
 # click 'another question', then a copy of div.question with choice_q(num) increased by 1 should insert itself into the form before the submit button.
 
 # click 'another choice', then a copy of closest input with name=choice will be appended just below that input tag
+ -->

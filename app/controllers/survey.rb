@@ -15,10 +15,8 @@ post '/survey/create' do
     end
     q_num += 1
   end
-
-  # do it for the first elements in choice up until length of the 
-
-  redirect '/survey/' + survey.id.to_s
+  
+  redirect "/survey/#{survey.id}"
 end
 
 get '/survey/:id' do
