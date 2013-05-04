@@ -1,0 +1,9 @@
+<div class="container">
+  <% if all_surveys %>
+  <ul>
+    <% all_surveys.each do |survey| %>
+    <li><a href="/survey/<%=survey.id%>"><%=survey.name%></a></li>
+    <% end %>
+  </ul>
+  <%end%>
+</div>

@@ -1,12 +1,30 @@
-<div class='container'>
-  <h1><%= @survey.name %></h1>
-  <h2>Questions:</h2>
-    <% @survey.questions.each do |question| %>
+<% if current_user.id == @survey.author_id %>
+  <div class='container'>
+    <h1><%= @survey.name %></h1>
+    <h2>Questions:</h2>
+      <% @survey.questions.each do |question| %>
+        <p><%= question.question %></p>
+        <% question.choices.each do |choice| %>
+          <ul>
+            <li><%= choice.choice %></li>
+          </ul>
+        <% end %>   
+      <% end %> 
+  </div>
+<%else%>
+  <div class='container'>
+    <h1><%= @survey.name %></h1>
+    <form>
+      <h2>Questions:</h2>
+      <% @survey.questions.each do |question| %>
       <p><%= question.question %></p>
       <% question.choices.each do |choice| %>
-        <ul>
-          <li><%= choice.choice %></li>
-        </ul>
+      <ul>
+        <li><input type="radio" name="choice" value="<%=choice.id%>"><%=choice.choice%><br></li>
+      </ul>
       <% end %>    
-    <% end %>
-</div>
+      <% end %>
+      <input type="submit" value="submit">
+    </form>
+  </div>
+<%end%>

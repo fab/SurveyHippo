@@ -11,4 +11,8 @@ helpers do
   def users_completed_surveys
      @completed_surveys = Survey.where(author_id: session[:id])
   end
+
+  def all_surveys
+    @all_surveys = Survey.all
+  end
 end
