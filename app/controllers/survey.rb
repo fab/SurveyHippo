@@ -23,6 +23,5 @@ end
 
 get '/survey/:id' do
   @survey = Survey.find(params[:id])
-  "You're looking for survey with id #{@survey.id}"
-  # erb :survey
+  erb :survey
 end
