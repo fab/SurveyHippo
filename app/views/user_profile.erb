@@ -1,5 +1,22 @@
 <div class="container">
+  <h2>Surveys Created </h2>
+  <% if users_created_surveys %>
+  <ul>
+    <% users_created_surveys.each do |survey| %>
+    <li><a href="/survey/<%=survey.id%>"><%= survey.name %></a></li>
+    <% end %>
+  </ul>
+  <% end %>
 
+  <h2>Surveys Completed </h2>
+  <% if users_completed_surveys %>
+  <ul>
+    <% users_completed_surveys.each do |survey| %>
+    <li><%= survey.name %></li>
+    <% end %>
+  </ul>
+  <% end %>
 <a href="/logout">Logout</a>
+<a href="/survey/create">Create Survey</a>
 
 </div>
