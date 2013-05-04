@@ -23,3 +23,9 @@ get '/survey/:id' do
   @survey = Survey.find(params[:id])
   erb :survey
 end
+
+get '/survey/:id/results' do
+  # this results matters on login
+  @survey = Survey.find(params[:id])
+  erb :survey_results
+end

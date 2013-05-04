@@ -1,4 +1,20 @@
 <div class='container'>
   <h1>Here are the results for your survey:</h1>
-  <h2>Survey name:<%= @survey.name %></h2>
+  <h2>Survey name: <%= @survey.name %></h2>
+  <h2>Questions:</h2>
+  <% @survey.questions.each do |question| %>
+  <% total = responses_per_question(question) %>
+  <p><%= question.question %></p>
+    <% question.choices.each do |choice| %>
+    <ul>
+      <% num = responses_per_choice(question, choice) %>
+      <li><%= choice.choice %>. <p>Num responses: <%= num %> <b>(<%= percentage(num, total) %>%)</b></p></li>
+    </ul>
+    <% end %>   
+  <% end %> 
 </div>
+
+<!-- # for each question in the survey
+# for each choice in that question
+# Response.where('question_id = ? and choice_id = ?', question.id, choice.id).count
+ -->
