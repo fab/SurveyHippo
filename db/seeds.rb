@@ -1,5 +1,5 @@
 100.times do
-  User.create(:username => Faker::Name.first_name, :password_hash => 'password', :email => Faker::Internet.email)
+  User.create(:username => Faker::Name.first_name, :password => 'password', :email => Faker::Internet.email)
 end
 
 100.times do
