@@ -3,10 +3,10 @@
     <h1><%= @survey.name %></h1>
     <h2>Questions:</h2>
       <% @survey.questions.each do |question| %>
-        <p><%= question.question %></p>
+        <p><%= question.text %></p>
         <% question.choices.each do |choice| %>
           <ul>
-            <li><%= choice.choice %></li>
+            <li><%= choice.text %></li>
           </ul>
         <% end %>   
       <% end %> 
@@ -17,10 +17,10 @@
     <form>
       <h2>Questions:</h2>
       <% @survey.questions.each do |question| %>
-      <p><%= question.question %></p>
+      <p><%= question.text %></p>
       <% question.choices.each do |choice| %>
       <ul>
-        <li><input type="radio" name="choice" value="<%=choice.id%>"><%=choice.choice%><br></li>
+        <li><input type="radio" name="choice" value="<%= choice.id %>"><%= choice.text %><br></li>
       </ul>
       <% end %>    
       <% end %>
