@@ -1,10 +1,18 @@
 <div class='container'>
 
   <form method='post' action='/register' >
-        Username: <input type='text' placeholder='username' required name='username' autocomplete='on'>
-        Email: <input type='email' placeholder='email' required name='email' autocomplete='on'>
-        Password: <input type='password' size='>5' placeholder='password' required name='password'>
-        <input type='submit' value='Register'>
+    <div class='register-input-container'>
+      <p>Username</p>
+      <p><input class='register-input' type='text' placeholder='e.g., hipposaurus' required name='username' autocomplete='on'></p>
+      
+      <p>Email</p>
+      <p><input class='register-input' type='email' placeholder='e.g., hipposaurus@email.com' required name='email' autocomplete='on'></p>
+      
+      <p>Password</p>
+      <p><input class='register-input' type='password' placeholder='e.g., seek-rit' required name='password'></p>
+    </div
+
+    <p><input class='register-submit' type='submit' value='Submit'></p>
   </form>
 
 </div>
