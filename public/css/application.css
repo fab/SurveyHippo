@@ -1,0 +1,12 @@
+.container-layout {
+  margin: 20px auto;
+  width: 800px;
+}
+
+.container {
+  margin: 60px auto;
+  width: 600px;
+  padding: 30px;
+  border: 1px solid #333;
+  /*background-color: red;*/
+}
