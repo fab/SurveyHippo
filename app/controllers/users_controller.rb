@@ -1,4 +1,4 @@
-get "/user/:id" do
+get '/user/:id' do
   erb :user_profile
 end
 
@@ -12,7 +12,7 @@ post '/register' do
 
   if @user.save
     session[:id] = @user.id
-    redirect("/user/#{@user.id}")
+    redirect to '/user/' + @user.id.to_s
   else
     @errors = @user.errors.full_messages
     erb :user_register
@@ -29,7 +29,7 @@ post '/login' do
 
   if current_user
     session[:id] = current_user.id
-    redirect("/user/#{current_user.id}")
+    redirect to '/user/' + current_user.id.to_s
   else
     @errors = current_user.errors.full_messages
     erb :user_login
@@ -40,7 +40,7 @@ end
 
 get '/logout' do
   session.clear
-  @message = "You have successfully logged out!"
+  @message = 'You have successfully logged out!'
   redirect to '/'
 end
 
