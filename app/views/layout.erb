@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
 
-  <!-- JS/JQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title>Survey Hippo</title>
-
 </head>
 
 <body>
@@ -21,7 +17,9 @@
         <% if current_user %>
         <ul class='nav-actions'>
           <li> | </li>
-          <li><a href="/post/submit">Submit</a></li>
+          <li><a href="/survey/create">Create Survey</a></li>
+          <li> | </li>
+          <li><a href="/survey/all">View All Surveys</a></li>
           <li> | </li>
         </ul>
         <ul class='nav-user-actions'>

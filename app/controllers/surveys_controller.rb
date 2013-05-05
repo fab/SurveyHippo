@@ -15,8 +15,12 @@ post '/survey/create' do
     end
     q_num += 1
   end
-  
   redirect "/survey/#{survey.id}"
+end
+
+
+get "/survey/all" do
+  erb :survey_all
 end
 
 
@@ -30,9 +34,4 @@ end
 get '/survey/:id' do
   @survey = Survey.find(params[:id])
   erb :survey
-end
-
-
-get "/view/survey/all" do
-  erb :survey_list
 end
