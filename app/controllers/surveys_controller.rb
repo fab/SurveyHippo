@@ -29,3 +29,8 @@ get '/survey/:id/results' do
   @survey = Survey.find(params[:id])
   erb :survey_results
 end
+
+get "/view/survey/all" do
+ #lists all surveys
+  erb :survey_list
+end
