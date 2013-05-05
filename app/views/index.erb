@@ -1,25 +1,10 @@
-<% unless current_user %>
-
 <div class="container">
-  <form action="/login" method="post">
-    Username: <input type="text" placeholder="username" required name="username"><br>
-    Password: <input type="password" placeholder="password" required name="password"><br>
-    <input type="submit" value="Login">
-  </form><br><br>
-  
-  <form action="/register" method="post">
-    Username: <input type="text" placeholder="username" required name="username" autocomplete="on"><br>
-    Email: <input type="email" placeholder="email" required name="email" autocomplete="on"><br>
-    Password: <input type="password" size=">5" placeholder="password" required name="password"><br>
-    <input type="submit" value="Register">
-  </form>
-
-<% else %>
-
- <a href = '/logout'>Logout</a>
+    
+    home
+    
 
 
-<% end %>
+
 
 
   <% if @errors %>

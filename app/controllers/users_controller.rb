@@ -1,15 +1,25 @@
+get '/register' do
+  erb :user_register
+end
+
+
+
 post '/register' do
   @user = User.new(params)
-  @user.save
+
   if @user.save
     session[:id] = @user.id
     redirect("/user/#{@user.id}")
   else
     @errors = @user.errors.full_messages
-    erb :index
+    erb :user_register
   end
 end
 
+
+get '/login' do
+  erb :user_login
+end
 
 post '/login' do
   current_user = User.authenticate(params[:username], params[:password])
@@ -19,19 +29,20 @@ post '/login' do
     redirect("/user/#{current_user.id}")
   else
     @errors = current_user.errors.full_messages
-    erb :index
+    erb :user_login
   end
 
-  erb :user_profile
 end
+
 
 get "/user/:id" do
   erb :user_profile
 end
 
+
 get '/logout' do
   session.clear
   @message = "You have successfully logged out!"
-  erb :index
+  redirect to '/'
 end
 
