@@ -17,7 +17,34 @@
 <body>
   <header>
     <nav>
-      
+      <h2><a href='/'>Survey Hippo</a></h2>
+        <% if current_user %>
+        <ul class='nav-actions'>
+          <li> | </li>
+          <li><a href="/post/submit">Submit</a></li>
+          <li> | </li>
+        </ul>
+        <ul class='nav-user-actions'>
+          <li> | </li>
+          <li><a href='/profile/<%= current_user.id %>'> <%= current_user.username %></a></li>
+          <li> | </li>
+          <li><a href='/logout'>Logout</a></li>
+          <li> | </li>
+        </ul>
+        <% else %>
+        <ul class='nav-actions'>
+          <li> | </li>
+          <li><a href="/post/submit">Submit</a></li>
+          <li> | </li>
+        </ul>
+        <ul class='nav-user-actions'>
+          <li> | </li>
+          <li><a href="/register">Register</a></li>
+          <li> | </li>
+          <li><a href="/login">Login</a></li>
+          <li> | </li>
+        </ul>
+        <% end %>
     </nav>
   </header
 
