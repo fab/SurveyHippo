@@ -82,21 +82,21 @@ form {
   position: relative;
 }
 
-.register-input-container {
+.input-container {
   float: left;
   padding: 20px;
 }
 
-.register-input-container p {
+.input-container p {
   font-weight: bold;
   color: #444;
 }
 
-.register-input {
+.input {
   width: 300px;
 }
 
-.register-submit {
+.submit {
   position: absolute;
   bottom: 0;
   right: 0;
