@@ -1,8 +1,11 @@
-get '/register' do
-  erb :user_register
+get "/user/:id" do
+  erb :user_profile
 end
 
 
+get '/register' do
+  erb :user_register
+end
 
 post '/register' do
   @user = User.new(params)
@@ -32,11 +35,6 @@ post '/login' do
     erb :user_login
   end
 
-end
-
-
-get "/user/:id" do
-  erb :user_profile
 end
 
 

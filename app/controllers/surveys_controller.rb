@@ -19,10 +19,6 @@ post '/survey/create' do
   redirect "/survey/#{survey.id}"
 end
 
-get '/survey/:id' do
-  @survey = Survey.find(params[:id])
-  erb :survey
-end
 
 get '/survey/:id/results' do
   # this results matters on login
@@ -30,7 +26,13 @@ get '/survey/:id/results' do
   erb :survey_results
 end
 
+
+get '/survey/:id' do
+  @survey = Survey.find(params[:id])
+  erb :survey
+end
+
+
 get "/view/survey/all" do
- #lists all surveys
   erb :survey_list
 end
