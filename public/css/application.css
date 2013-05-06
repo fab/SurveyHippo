@@ -53,7 +53,7 @@ header div {
 }
 
 .login_or_reg {
-  gfont-family: 'Carrois Gothic SC', sans-serif;
+  font-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   margin-top: 10px;
   width: 500px;
