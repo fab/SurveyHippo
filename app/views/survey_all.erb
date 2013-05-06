@@ -1,9 +1,16 @@
 <div class="container">
+  <h1> All Surveys </h1>
   <% if all_surveys %>
   <ul>
     <% all_surveys.each do |survey| %>
-    <li><a href="/survey/<%=survey.id%>"><%=survey.name%></a></li>
+      <% unless current_user.id == survey.author_id %>
+        <li><a href="/survey/<%=survey.id%>"><%=survey.name%></a></li>
+      <% end %>
     <% end %>
   </ul>
   <%end%>
 </div>
+
+
+
+  

@@ -1,28 +1,26 @@
-<% if current_user.id == @survey.author_id %>
+<% if @message %>
   <div class='container'>
+   <h1> <%= @message %><h1>
     <h1><%= @survey.name %></h1>
     <h2>Questions:</h2>
       <% @survey.questions.each do |question| %>
         <p><%= question.text %></p>
-        <% question.choices.each do |choice| %>
-          <ul>
-            <li><%= choice.text %></li>
-          </ul>
-        <% end %>   
+        <p>You answered: <%= question.responses.find_by_user_id(current_user.id).choice.text %><p><br>
       <% end %> 
   </div>
 <%else%>
+
   <div class='container'>
     <h1><%= @survey.name %></h1>
-    <form>
+    <form action="/survey/<%=@survey.id%>/submit" method="post">
       <h2>Questions:</h2>
       <% @survey.questions.each do |question| %>
-      <p><%= question.text %></p>
-      <% question.choices.each do |choice| %>
-      <ul>
-        <li><input type="radio" name="choice" value="<%= choice.id %>"><%= choice.text %><br></li>
-      </ul>
-      <% end %>    
+        <p><%= question.text %></p>
+          <% question.choices.each do |choice| %>
+          <ul>
+            <li><input type="radio" name="<%= question.id %>" value="<%= choice.id %>"><%= choice.text %></li>
+            </ul>
+          <% end %>
       <% end %>
       <input type="submit" value="submit">
     </form>
