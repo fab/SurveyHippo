@@ -14,10 +14,10 @@ end
   Choice.create(:question_id => Question.all.sample.id, :text => Faker::Lorem.sentence)
 end
 
-# 1.upto(100) do |i|
-#   Response.create(:question_id => 501, :choice_id => [1001, 1002].sample, :user_id => i)
-# end
+1.upto(100) do |i|
+  Response.create(:question_id => 501, :choice_id => [1001, 1002].sample, :user_id => i)
+end
 
-# 1.upto(100) do |i|
-#   Response.create(:question_id => 502, :choice_id => [1003, 1004].sample, :user_id => i)
-# end
+1.upto(100) do |i|
+  Response.create(:question_id => 502, :choice_id => [1003, 1004].sample, :user_id => i)
+end

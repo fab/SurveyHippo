@@ -225,3 +225,14 @@ form {
   progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
 
 }
+
+ ul li {
+  list-style-type: none;
+  margin:10px 0px 10px 0px;
+ }
+
+ ul li.active {
+  background-color: #A9A9A9;
+  border-radius: 5px;
+  padding: 5px;
+}
