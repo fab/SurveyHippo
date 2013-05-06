@@ -75,14 +75,14 @@ header div {
   font-size: 30px;
 }
 
-.index_options {
+.options {
   font-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   width: 500px;
   padding: 10px;
 }
 
-.index_options div {
+.options div {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 12px;
@@ -93,11 +93,11 @@ header div {
   font-size: 30px;
 }
 
-.index_options div:last-child {
+.options div:last-child {
   margin-bottom: 0;
 }
 
-.index_options a {
+.options a {
   text-decoration: none;
   color: white;
 }
