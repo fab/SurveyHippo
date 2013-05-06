@@ -13,6 +13,7 @@
 }
 
 header {
+  font-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   margin-top: 100px;
   width: 500px;
@@ -52,6 +53,7 @@ header div {
 }
 
 .login_or_reg {
+  gfont-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   margin-top: 10px;
   width: 500px;
@@ -74,6 +76,7 @@ header div {
 }
 
 .index_options {
+  font-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   width: 500px;
   padding: 10px;
@@ -100,6 +103,7 @@ header div {
 }
 
 .logout_option {
+  font-family: 'Carrois Gothic SC', sans-serif;
   margin: 0 auto;
   width: 500px;
 }
