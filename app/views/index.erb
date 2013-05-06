@@ -1,11 +1,14 @@
-<div class="container">
-    
-  <h3>Recent Surveys</h3>
-    
-  <p>stuff here</p>
+<% if current_user %>
+  <div class='index_options'>
+    <div class='create_survey'><a href='/survey/create'>Create a survey</a></div>
+    <div class='view_your_surveys'><a href='/user/1'>View your surveys</a></div>
+    <div class='answer_surveys'><a href='/user/1'>Answer surveys</a></div>
+  </div>
+<% else %>
+  <div class='login_or_reg'>
+    <div class='login'><a href='/login'>Login</a></div>
+    <div class='register'><a href='/register'>Register</a></div>
+  </div>
+<% end %>
 
 
-
-
-  
-</div>

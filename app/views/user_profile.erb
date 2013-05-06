@@ -1,9 +1,12 @@
+<div class='index_options'>
+  <div class='view_your_surveys'><a href='/user/1'>View your surveys</a></div>
+</div>
 <div class="container">
   <h2>Surveys Created </h2>
   <% if users_created_surveys %>
   <ul>
     <% users_created_surveys.each do |survey| %>
-    <li><a href="/survey/<%=survey.id%>"><%= survey.name %></a></li>
+    <li><a href="/survey/<%=survey.id%>/results"><%= survey.name %></a></li>
     <% end %>
   </ul>
   <% end %>

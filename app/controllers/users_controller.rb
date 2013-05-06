@@ -25,13 +25,13 @@ get '/login' do
 end
 
 post '/login' do
-  current_user = User.authenticate(params[:username], params[:password])
+  login_attempt = User.authenticate(params[:username], params[:password])
 
-  if current_user
-    session[:id] = current_user.id
-    redirect to '/user/' + current_user.id.to_s
+  if login_attempt
+    session[:id] = login_attempt.id
+    redirect to '/'
   else
-    @errors = current_user.errors.full_messages
+    @errors = login_attempt.errors.full_messages
     erb :user_login
   end
 

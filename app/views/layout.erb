@@ -12,42 +12,16 @@
 
 <body>
   <header>
-    <nav>
-      <h2><a href='/'>Survey Hippo</a></h2>
-        <% if current_user %>
-        <ul class='nav-actions'>
-          <li> | </li>
-          <li><a href="/survey/create">Create Survey</a></li>
-          <li> | </li>
-          <li><a href="/survey/all">View All Surveys</a></li>
-          <li> | </li>
-        </ul>
-        <ul class='nav-user-actions'>
-          <li> | </li>
-          <li><a href='/user/<%= current_user.id %>'> <%= current_user.username %></a></li>
-          <li> | </li>
-          <li><a href='/logout'>Logout</a></li>
-          <li> | </li>
-        </ul>
-        <% else %>
-        <ul class='nav-actions'>
-          <li> | </li>
-          <li><a href="/post/submit">Submit</a></li>
-          <li> | </li>
-        </ul>
-        <ul class='nav-user-actions'>
-          <li> | </li>
-          <li><a href="/register">Register</a></li>
-          <li> | </li>
-          <li><a href="/login">Login</a></li>
-          <li> | </li>
-        </ul>
-        <% end %>
-    </nav>
-  </header
-
-  <div class='container-layout'>
-    <%= yield %>
-  </div>
+    <div class='title'><a href='/'>SurveyHippo</a></div>
+    <% if current_user %>
+      <div class='username'><a href='/'><%= current_user.username %></a></div>
+    <% end %>
+  </header>
+  <%= yield %>
+  <% if current_user %>
+  <div class='logout_option'>
+    <div class='logout'><a href='/logout'>Logout</a></div>
+  <% end %>
+</div>
 </body>
 </html>

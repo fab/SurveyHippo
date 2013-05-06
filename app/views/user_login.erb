@@ -1,19 +1,19 @@
+<div class='login_or_reg'>
+  <div class='login'><a href='/login'>Login</a></div>
+</div>
 <div class='container'>
-
   <form action="/login" method="post">
     <div class='input-container'>
-        Username: <input type="text" placeholder="username" required name="username"><br>
-        Password: <input type="password" placeholder="password" required name="password"><br>
-        <input type="submit" value="Login">
+      Username: <input type="text" placeholder="username" required name="username"><br>
+      Password: <input type="password" placeholder="password" required name="password"><br>
+      <input type="submit" value="Login">
     </div>
   </form>
-
   <% if @errors %>
-    <ul>
+  <ul>
     <% @errors.each do |error| %>
-      <li><%= error %></li>
+    <li><%= error %></li>
     <% end %>
-    </ul>
+  </ul>
   <% end %>
-
 </div>
