@@ -1,15 +1,4 @@
 <div class='login_or_reg'>
   <div class='login'><a href='/login'>Login</a></div>
 </div>
-<div class='container'>
-  <form action="/login" method="post">
-    <div class='input-container'>
-      Username: <input type="text" placeholder="username" required name="username"><br>
-      Password: <input type="password" placeholder="password" required name="password"><br>
-      <input class='submit' type="submit" value="Submit">
-    </div>
-  </form>
-  <% if @errors %>
-    <%= @errors %>
-  <% end %>
-</div>
+<%= erb :_login_box, :layout => false %>

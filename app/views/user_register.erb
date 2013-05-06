@@ -1,26 +1,4 @@
 <div class='login_or_reg'>
   <div class='register'><a href='/register'>Register</a></div>
 </div>
-<div class='container'>
-  <form method='post' action='/register' >
-    <div class='input-container'>
-      <p>Username</p>
-      <p><input class='input' type='text' placeholder='e.g., hipposaurus' required name='username' autocomplete='on'></p>
-      
-      <p>Email</p>
-      <p><input class='input' type='email' placeholder='e.g., hipposaurus@email.com' required name='email' autocomplete='on'></p>
-      
-      <p>Password</p>
-      <p><input class='input' type='password' placeholder='e.g., seek-rit' required name='password'></p>
-    </div>
-
-    <p><input class='submit' type='submit' value='Submit'></p>
-  </form>
-    <% if @errors %>
-  <ul>
-    <% @errors.each do |error| %>
-    <li><%= error %></li>
-    <% end %>
-  </ul>
-  <% end %>
-</div>
+<%= erb :_register_box, :layout => false %>

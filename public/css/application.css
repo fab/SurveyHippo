@@ -66,7 +66,7 @@ header div {
   color: white; 
 }
 
-.login_or_reg div {
+.login_or_reg div.button {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 12px;
@@ -208,8 +208,8 @@ form {
 
 .submit {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
   width: 100px;
   border-radius: 5px;
   color: #FFFFFF;
