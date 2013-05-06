@@ -5,11 +5,19 @@ helpers do
   end
 
   def users_created_surveys
-     @created_surveys = Survey.where(author_id: session[:id])
+     @created_surveys = Survey.where(author_id: current_user.id)
   end
 
   def users_completed_surveys
-     @completed_surveys = Survey.where(author_id: session[:id])
+     @completed_surveys = Completion.where(user_id: current_user.id)
   end
-  
+
+  def completed?(survey)
+    completed = users_completed_surveys.select {|completion| completion.survey_id == survey.id }
+    if completed.empty?
+      false
+    else
+      true
+    end
+  end
 end

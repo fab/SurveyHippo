@@ -13,7 +13,11 @@ helpers do
   end
 
   def percentage(num, total)
-    ((num/total.to_f)*100).round(2)
+    if total == 0
+      0
+    else
+      ((num/total.to_f)*100).round(2)
+    end
   end
   
   def create_survey

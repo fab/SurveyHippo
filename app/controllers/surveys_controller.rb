@@ -3,13 +3,9 @@ get '/survey/create' do
 end
 
 post '/survey/create' do
-  # need to be logged in to go down this route
-
   create_survey
-
-  redirect to '/survey/' + @survey.id.to_s
+  redirect to "/survey/#{@survey.id}/results" 
 end
-
 
 get '/survey/all' do
   erb :survey_all
@@ -25,5 +21,19 @@ end
 
 get '/survey/:id' do
   @survey = Survey.find(params[:id])
+  if completed?(@survey)
+    @message = "You've already completed this survey!"
+  end
   erb :survey
+end
+
+post '/survey/:id/submit' do
+  puts params
+  params.each_pair do |q_id,c_id|
+    unless q_id == "splat" || q_id ==  "captures" || q_id == "id"
+     Response.create(:user_id => current_user.id, :question_id => q_id, :choice_id => c_id) 
+   end
+  end
+  Completion.create(:user_id => current_user.id, :survey_id => params[:id], :completed => true)
+  redirect '/survey/all'
 end
