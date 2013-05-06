@@ -12,7 +12,7 @@ post '/register' do
 
   if @user.save
     session[:id] = @user.id
-    redirect to '/user/' + @user.id.to_s
+    redirect "/user/#{@user.id}"
   else
     @errors = @user.errors.full_messages
     erb :user_register
@@ -27,11 +27,11 @@ end
 post '/login' do
   login_attempt = User.authenticate(params[:username], params[:password])
 
-  if login_attempt
+  if login_attempt.class == User
     session[:id] = login_attempt.id
     redirect to '/'
   else
-    @errors = login_attempt.errors.full_messages
+    @errors = login_attempt
     erb :user_login
   end
 

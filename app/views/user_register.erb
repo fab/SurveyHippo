@@ -16,4 +16,11 @@
 
     <p><input class='submit' type='submit' value='Submit'></p>
   </form>
+    <% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
 </div>
