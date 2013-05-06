@@ -1,17 +1,19 @@
 <div class='options'>
   <div class='answer_surveys'><a href='/survey/all'>Answer surveys</a></div>
 </div>
-<div class="container">
-  <h1> All Surveys </h1>
-  <% if all_surveys %>
-  <ul>
-    <% all_surveys.each do |survey| %>
-      <% unless current_user.id == survey.author_id %>
-        <li><a href="/survey/<%=survey.id%>"><%=survey.name%></a></li>
+<div class='container'>
+  <div class='content'>
+    <h1> All Surveys </h1>
+    <% if all_surveys %>
+    <ul>
+      <% all_surveys.each do |survey| %>
+        <% unless current_user.id == survey.author_id %>
+          <li><a href="/survey/<%=survey.id%>"><%=survey.name%></a></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-  <%end%>
+    </ul>
+    <%end%>
+  </div>
 </div>
 
 
