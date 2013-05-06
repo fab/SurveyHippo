@@ -10,16 +10,9 @@
         
         <p>Password</p>
         <p><input class='input' type='password' placeholder='e.g., seek-rit' required name='password'></p>
+      <input class='submit' type='submit' value='Submit'>
+      <div class='errors'></div>
       </div>
-
-      <p><input class='submit' type='submit' value='Submit'></p>
     </form>
-      <% if @errors %>
-    <ul>
-      <% @errors.each do |error| %>
-      <li><%= error %></li>
-      <% end %>
-    </ul>
-    <% end %>
   </div>
 </div>

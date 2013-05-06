@@ -20,7 +20,6 @@ var login_submit = function(e) {
       $('#login_box').find('.errors').text(response);
     }
     else{
-      console.log('else route');
       $('html').html(response);
     }
   });
@@ -30,10 +29,17 @@ var register_submit = function(e) {
   e.preventDefault();
   $.ajax({
     type: 'post',
-    url: '/register',
-    data: $(this).serialize()
+    url: '/register_ajax',
+    data: $('#register_box').find('form').serialize()
   }).done(function(response){
-    console.log(repsonse);
+    console.log(response);
+    if (response.length<200){
+      console.log(response);
+      $('#register_box').find('.errors').text(response);
+    }
+    else{
+      $('html').html(response);
+    }
   });
 };
 

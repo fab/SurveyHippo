@@ -19,6 +19,16 @@ post '/register' do
   end
 end
 
+post '/register_ajax' do
+  @user = User.new(params)
+  if @user.save
+    session[:id] = @user.id
+    redirect '/'
+  else
+    @errors = @user.errors.full_messages.join(', ')
+  end
+end
+
 
 get '/login' do
   erb :user_login
