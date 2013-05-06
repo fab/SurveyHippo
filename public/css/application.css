@@ -236,3 +236,8 @@ form {
   border-radius: 5px;
   padding: 5px;
 }
+
+.question {
+  font-weight: 1000;
+  font-size: 20px;
+}

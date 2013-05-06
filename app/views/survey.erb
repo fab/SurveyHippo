@@ -5,8 +5,11 @@
       <h1><%= @survey.name %></h1>
       <h2>Questions:</h2>
       <% @survey.questions.each do |question| %>
-        <p><%= question.text %></p>
-        <p>You answered: <%= question.responses.find_by_user_id(current_user.id).choice.text %><p><br>
+        <p class="question"><%= question.text %></p>
+        <% @answer = question.responses.find_by_user_id(current_user.id)%>
+        <% if @answer %>
+        <p class = "answer">You answered: <%= @answer.choice.text  %><p><br>
+        <% end %>
       <% end %> 
     </div>
   </div>
@@ -16,12 +19,14 @@
         <h1><%= @survey.name %></h1>
         <form action="/survey/<%=@survey.id%>/submit" method="post">
           <h2>Questions:</h2>
+          <% ques_num = 1 %>
           <% @survey.questions.each do |question| %>
-            <p><%= question.text %></p>
+            <p><%= ques_num %>. <%= question.text %></p>
             <ul>
               <% question.choices.each do |choice| %>
                 <li class="disabled"><input type="radio" name="<%= question.id %>" value="<%= choice.id %>"><%= choice.text %></li>
               <% end %>
+              <% ques_num += 1 %>
             </ul>
           <% end %>
           <input type="submit" value="submit">
