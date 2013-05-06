@@ -8,6 +8,17 @@ var register_click = function(e) {
   $('#register_box').slideToggle();
 };
 
+var register_submit = function(e) {
+  e.preventDefault();
+  $.ajax({
+    type: 'post',
+    url: '/register',
+    data: $('#register_box').find('form').serialize()
+  }).done(function(response){
+    console.log(repsonse);
+  });
+};
+
 
 $(document).ready(function() {
   $('.hidden').hide();
