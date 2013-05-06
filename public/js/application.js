@@ -3,6 +3,7 @@ $(document).ready(function() {
   addQuestion();
   addChoice();
   hideChoices();
+  unhideChoices();
 
 });
 
@@ -37,7 +38,17 @@ $(document).ready(function() {
     $('input').on('click', function(){
       $(this).parent().removeClass('disabled');
       $(this).parent().addClass('active');
-      $(this).parent().parent().find('.disabled').remove();
+      $(this).parent().parent().find('.disabled').hide();
+    });
+
+  };
+
+  unhideChoices = function(){
+    $('ul li').on('click', function(e) {
+      var ellEye = $(e.target)
+      ellEye.removeClass('active');
+      ellEye.addClass('disabled');      
+      ellEye.parent().find('.disabled').show();
     });
 
   };
