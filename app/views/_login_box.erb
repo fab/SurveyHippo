@@ -1,0 +1,16 @@
+<div class='container'>
+  <form action="/login" method="post">
+    <div class='input-container'>
+      Username: <input type="text" placeholder="username" required name="username"><br>
+      Password: <input type="password" placeholder="password" required name="password"><br>
+      <input class='submit' type="submit" value="Submit">
+    </div>
+  </form>
+  <% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
