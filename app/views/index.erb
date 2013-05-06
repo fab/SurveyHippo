@@ -6,9 +6,10 @@
   </div>
 <% else %>
   <div class='login_or_reg'>
-    <div class='login'><a href='/login'>Login</a></div>
-    <div class='register'><a href='/register'>Register</a></div>
+    <div class='login button'><a href='/login'>Login</a></div>
+    <%= erb :_login_box, :layout => false %>
+    <div class='register button'><a href='/register'>Register</a></div>
   </div>
+
+  <%= erb :_register_box, :layout => false %>
 <% end %>
-
-
