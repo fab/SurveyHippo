@@ -66,7 +66,7 @@ header div {
   color: white; 
 }
 
-.login_or_reg div {
+.login_or_reg div.button {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 12px;
