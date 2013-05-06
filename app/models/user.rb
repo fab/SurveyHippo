@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
       @user.password == password
       @user
     else
-      nil
+      return "Could not find Username or Password."
     end
   end
 
