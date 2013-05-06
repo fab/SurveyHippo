@@ -4,6 +4,12 @@ var login_click = function(e) {
   $('#login_box').show();
 };
 
+var register_click = function(e) {
+  e.preventDefault();
+  $('.login').hide();
+  $('#register_box').show();
+};
+
 
 $(document).ready(function() {
   $('.hidden').hide();
@@ -11,9 +17,8 @@ $(document).ready(function() {
   $('.login').on('click', function(e){
     login_click(e);
   });
-
+  
   $('.register').on('click', function(e){
-    e.preventDefault();
-    $('.login').hide();
+    register_click(e);
   });
 });
