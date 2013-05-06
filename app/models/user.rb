@@ -14,12 +14,10 @@ class User < ActiveRecord::Base
 
   def self.authenticate(username, password)
     @user = find_by_username(username)
-     if @user
-      @user.password == password
-      @user
-    else
-      return "Could not find Username or Password."
+    if @user
+      return @user if @user.password == password
     end
+    return "Could not find Username or Password."
   end
 
   def password

@@ -1,15 +1,10 @@
 <% if current_user %>
-  <div class='options'>
-    <div class='create_survey'><a href='/survey/create'>Create a survey</a></div>
-    <div class='view_your_surveys'><a href='/user/<%= current_user.id %>'>View your surveys</a></div>
-    <div class='answer_surveys'><a href='/survey/all'>Answer surveys</a></div>
-  </div>
+  <%= erb :_profile_links, :layout => false %>
 <% else %>
   <div class='login_or_reg'>
     <div class='login button'><a href='/login'>Login</a></div>
     <%= erb :_login_box, :layout => false %>
     <div class='register button'><a href='/register'>Register</a></div>
+    <%= erb :_register_box, :layout => false %>
   </div>
-
-  <%= erb :_register_box, :layout => false %>
 <% end %>

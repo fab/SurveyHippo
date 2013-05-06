@@ -32,11 +32,20 @@ post '/login' do
     redirect to '/'
   else
     @errors = login_attempt
-    erb :user_login
   end
-
 end
 
+post '/login_ajax' do
+  puts params
+  login_attempt = User.authenticate(params[:username], params[:password])
+
+  if login_attempt.class == User
+    session[:id] = login_attempt.id
+    redirect to '/'
+  else
+    @errors = login_attempt
+  end
+end
 
 get '/logout' do
   session.clear
