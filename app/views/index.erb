@@ -2,9 +2,9 @@
   <%= erb :_profile_links, :layout => false %>
 <% else %>
   <div class='login_or_reg'>
-    <div class='login button'><a href='/login'>Login</a></div>
+    <div class='login button' id='special'><a href='/login'>Login</a></div>
     <%= erb :_login_box, :layout => false %>
-    <div class='register button'><a href='/register'>Register</a></div>
+    <div class='register button' id='special'><a href='/register'>Register</a></div>
     <%= erb :_register_box, :layout => false %>
   </div>
 <% end %>

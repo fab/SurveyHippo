@@ -2,23 +2,6 @@ get '/user/:id' do
   erb :user_profile
 end
 
-
-get '/register' do
-  erb :user_register
-end
-
-post '/register' do
-  @user = User.new(params)
-
-  if @user.save
-    session[:id] = @user.id
-    redirect "/user/#{@user.id}"
-  else
-    @errors = @user.errors.full_messages
-    erb :user_register
-  end
-end
-
 post '/register_ajax' do
   @user = User.new(params)
   if @user.save
@@ -26,22 +9,6 @@ post '/register_ajax' do
     redirect '/'
   else
     @errors = @user.errors.full_messages.join(', ')
-  end
-end
-
-
-get '/login' do
-  erb :user_login
-end
-
-post '/login' do
-  login_attempt = User.authenticate(params[:username], params[:password])
-
-  if login_attempt.class == User
-    session[:id] = login_attempt.id
-    redirect to '/'
-  else
-    @errors = login_attempt
   end
 end
 

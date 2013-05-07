@@ -4,7 +4,7 @@ end
 
 post '/survey/create' do
   create_survey
-  redirect to "/survey/#{@survey.id}/results" 
+  redirect to "/survey/#{@survey.id}/results"
 end
 
 get '/survey/all' do
@@ -13,7 +13,6 @@ end
 
 
 get '/survey/:id/results' do
-  # this results matters on login
   @survey = Survey.find(params[:id])
   erb :survey_results
 end
@@ -31,7 +30,7 @@ post '/survey/:id/submit' do
   puts params
   params.each_pair do |q_id,c_id|
     unless q_id == "splat" || q_id ==  "captures" || q_id == "id"
-     Response.create(:user_id => current_user.id, :question_id => q_id, :choice_id => c_id) 
+     Response.create(:user_id => current_user.id, :question_id => q_id, :choice_id => c_id)
    end
   end
   Completion.create(:user_id => current_user.id, :survey_id => params[:id], :completed => true)

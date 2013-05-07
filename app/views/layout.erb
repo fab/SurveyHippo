@@ -16,13 +16,13 @@
   <header>
     <div class='title'><a href='/'>SurveyHippo</a></div>
     <% if current_user %>
-      <div class='username'><a href='/'><%= current_user.username %></a></div>
+      <div class='username' id='special'><a href='/'><%= current_user.username %></a></div>
     <% end %>
   </header>
   <%= yield %>
   <% if current_user %>
   <div class='logout_option'>
-    <div class='logout'><a href='/logout'>Logout</a></div>
+    <div class='logout' id='special'><a href='/logout'>Logout</a></div>
   <% end %>
 </div>
 </body>

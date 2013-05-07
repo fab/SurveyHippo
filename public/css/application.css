@@ -2,6 +2,14 @@ body {
   font-family: 'Carrois Gothic SC', sans-serif;
 }
 
+#special:hover {
+  background: #fcff6b;
+}
+
+#special:hover a {
+  color: black;
+}
+
 .container {
   margin: 0px auto;
   margin-bottom: 10px;
@@ -44,6 +52,10 @@ header div {
   color: white;
 }
 
+.title:hover a {
+  color: #fcff6b;
+}
+
 .username {
   margin-top: 10px;
   background-color: white;
@@ -63,7 +75,7 @@ header div {
 
 .login_or_reg a {
   text-decoration: none;
-  color: white; 
+  color: white;
 }
 
 .login_or_reg div.button {
@@ -133,17 +145,17 @@ h2 {
 }
 
 header h2 a:link {
-  text-decoration: none;  
+  text-decoration: none;
   color: #00DDFF;
 }
 
 
 header h2 a:visited {
-  color: #00DDFF;  
+  color: #00DDFF;
 }
 
 header h2 a:hover {
-  color: #333;  
+  color: #333;
 }
 
 nav a {
@@ -151,7 +163,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #00DDFF;  
+  color: #00DDFF;
 }
 
 .nav-actions {
@@ -188,7 +200,7 @@ nav ul li {
 }
 
 form {
-  overflow: hidden;  
+  overflow: hidden;
   position: relative;
 }
 
